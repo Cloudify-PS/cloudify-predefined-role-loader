@@ -43,3 +43,8 @@ You can populate `source` and `install_args` in a few ways, as described in [Clo
   `install_args` should be as follows:
   
   `install_args: 'cloudify-predefined-role-loader --use-wheel --no-index --find-links=wheels/'`
+
+## Logging
+
+This Role Loader logs its configuration into the REST audit log file, configured via the `audit_log_file` key of the
+`cloudify.nodes.MyCloudifyManager` node type.
