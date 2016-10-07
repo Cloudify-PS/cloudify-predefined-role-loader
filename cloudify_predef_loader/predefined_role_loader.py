@@ -19,8 +19,8 @@ from flask_securest.authorization_providers.role_loaders.abstract_role_loader\
     import AbstractRoleLoader
 from flask_securest.constants import FLASK_SECUREST_LOGGER_NAME
 
-class PredefinedRoleLoader(AbstractRoleLoader):
 
+class PredefinedRoleLoader(AbstractRoleLoader):
     def __init__(self, roles):
         self.logger = logging.getLogger(FLASK_SECUREST_LOGGER_NAME)
         self.roles = roles
