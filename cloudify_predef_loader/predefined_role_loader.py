@@ -13,13 +13,18 @@
 #  * See the License for the specific language governing permissions and
 #  * limitations under the License.
 
+import logging
+
 from flask_securest.authorization_providers.role_loaders.abstract_role_loader\
     import AbstractRoleLoader
+from flask_securest.constants import FLASK_SECUREST_LOGGER_NAME
 
 class PredefinedRoleLoader(AbstractRoleLoader):
 
-    def __init__(self, role_name):
-        self.role_name = role_name
+    def __init__(self, roles):
+        self.logger = logging.getLogger(FLASK_SECUREST_LOGGER_NAME)
+        self.roles = roles
+        self.logger.info('Predefined role names: {}'.format(self.roles))
 
     def get_roles(self):
-        return self.role_name
+        return self.roles
